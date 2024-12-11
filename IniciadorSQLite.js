@@ -1,6 +1,6 @@
 // Inicializar sql.js
 initSqlJs({
-    locateFile: file => `path/to/sql-wasm.wasm` // Cambia esta ruta por la real
+    locateFile: file => `/workspaces/SQLiteNAvegador/mydatabase.db` // Cambia esta ruta por la real
 }).then(function (SQL) {
     // Crear una base de datos en memoria
     const db = new SQL.Database();
