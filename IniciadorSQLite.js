@@ -1,5 +1,7 @@
 // Inicializar sql.js
-initSqlJs().then(function (SQL) {
+initSqlJs({
+    locateFile: file => `path/to/sql-wasm.wasm` // Cambia esta ruta por la real
+}).then(function (SQL) {
     // Crear una base de datos en memoria
     const db = new SQL.Database();
 
@@ -10,4 +12,6 @@ initSqlJs().then(function (SQL) {
     // Consultar datos
     const res = db.exec("SELECT * FROM test;");
     console.log(res);
+}).catch(err => {
+    console.error("Error inicializando SQL.js:", err);
 });
